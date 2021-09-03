@@ -1,0 +1,70 @@
+﻿<Window x:Class="TestadorSmtp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestadorSmtp"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="Mensageiro" Height="313.846" Width="368.462" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Servidor SMTP:" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <TextBox Grid.Row="0" Grid.Column="1" 
+                 x:Name="TxtServidor" 
+                 Height="23"  TextWrapping="Wrap" Text="smtpout.secureserver.net" VerticalAlignment="Top" Margin="0,0,10,0"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Porta:" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <TextBox Grid.Row="1" Grid.Column="1" 
+                 x:Name="TxtPorta"
+                 HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="587" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Usuário:" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <CheckBox Grid.Row="2" Grid.Column="0"
+                  Content="SSL" VerticalAlignment="Center"
+                  x:Name="ChkSSL"
+                  IsChecked="True"
+                  />
+        <CheckBox Grid.Row="2" Grid.Column="1"
+                  Content="Autenticar" VerticalAlignment="Center"
+                  x:Name="ChkAutenticar"
+                  IsChecked="True"
+                  />
+        <TextBox Grid.Row="3" Grid.Column="1" 
+                 x:Name="TxtUsuario" 
+                 Height="23"  VerticalAlignment="Center"
+                 TextWrapping="Wrap" Text="mensageiro@escoblu.net"  />
+
+        <Label Grid.Row="4" Grid.Column="0" 
+               Content="Senha:" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <TextBox Grid.Row="4" Grid.Column="1" 
+                 x:Name="TxtSenha" Height="23"  Margin="1,1,10,0" 
+                 TextWrapping="NoWrap" Text="" VerticalAlignment="Top" />
+
+
+        <Label Grid.Row="5" Grid.Column="0" Content="Destinatário:" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+        <TextBox Grid.Row="5" Grid.Column="1" 
+                 x:Name="TxtDestinatario" Height="23"  Margin="1,1,10,0" 
+                 TextWrapping="NoWrap" Text="" VerticalAlignment="Top" />
+
+        <Button x:Name="ButtonTestar" Grid.Row="7" Grid.Column="0" 
+                Click="ButtonTestar_Click"
+                Content="Testar" Margin="2" />
+        <TextBlock x:Name="TxtMensagem" Grid.Row="7" Grid.Column="1" 
+                   Margin="10,0,0,0"  />
+    </Grid>
+</Window>
